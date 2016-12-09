@@ -11,9 +11,9 @@ def index():
     return "Hello NoCold-Joke"
 
 
-@app.route("/wx", methods=['GET', ['POST']])
+@app.route("/wx", methods=['GET', 'POST'])
 def wechat_auth():
-    if request.methods == 'GET':
+    if request.method == 'GET':
         token = "keepsecret"
         query = request.args
         signature = query.get('signature', '')
